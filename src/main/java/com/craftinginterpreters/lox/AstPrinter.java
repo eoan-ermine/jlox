@@ -1,5 +1,6 @@
 package com.craftinginterpreters.lox;
 
+import com.craftinginterpreters.lox.Expr.Assign;
 import com.craftinginterpreters.lox.Expr.Variable;
 
 class AstPrinter implements Expr.Visitor<String> {
@@ -33,6 +34,11 @@ class AstPrinter implements Expr.Visitor<String> {
     @Override
     public String visitVariableExpr(Variable expr) {
         return expr.name.toString();
+    }
+
+    @Override
+    public String visitAssignExpr(Assign expr) {
+        return parenthesize(expr.name.lexeme + " =", expr.value);
     }
 
     private String parenthesize(String name, Expr... exprs) {
