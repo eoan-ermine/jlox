@@ -4,6 +4,7 @@ import com.craftinginterpreters.lox.Expr.Assign;
 import com.craftinginterpreters.lox.Expr.Call;
 import com.craftinginterpreters.lox.Expr.Get;
 import com.craftinginterpreters.lox.Expr.Set;
+import com.craftinginterpreters.lox.Expr.Super;
 import com.craftinginterpreters.lox.Expr.This;
 import com.craftinginterpreters.lox.Expr.Variable;
 
@@ -85,5 +86,11 @@ class AstPrinter implements Expr.Visitor<String> {
     public String visitThisExpr(This expr) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'visitThisExpr'");
+    }
+
+    @Override
+    public String visitSuperExpr(Super expr) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'visitSuperExpr'");
     }
 }
